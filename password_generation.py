@@ -78,8 +78,24 @@ def registration():
 @app.route("/users/update_pwd/<int:id>", methods=["PUT"])
 def update_pwd(id):
     new_user = request.get_json()
+
+    if "password" not in new_user:
+        return "Password field is missing", 400
+    password = new_user["password"]
+    # characters = string.ascii_letters + string.digits + string.punctuation
+    # Überprüfen, ob das Passwort die Anforderungen erfüllt
+    car_letter = any(c in string.ascii_letters for c in password)
+    car_digit = any(c in string.digits for c in password)
+    car_punctuation = any(c in string.punctuation for c in password)
+    if not (car_letter and car_digit and car_punctuation):
+        return (
+            "password must contain at least one lowercase letter, one uppercase letter, one number and one symbol",
+            400,
+        )
+
     for u in users:
         if u["id"] == id:
+
             u["password"] = new_user["password"]
             save_users(users)
             return f"password updated successfully! {new_user}"
