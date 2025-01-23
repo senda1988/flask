@@ -1,6 +1,7 @@
 # Code Beschreibung:
 # Ich habe eine Funktion generation_psw erstellt, die ein Passwort generiert. Das Passwort muss mindestens einen Großbuchstaben, einen Kleinbuchstaben, ein Sonderzeichen und eine Zahl von 0 bis 9 enthalten.
 # Ich habe eine Route /users/registration erstellt, über die wir einen Benutzer aus dem JSON-Body hinzufügen und das Passwort mithilfe der zuvor erstellten Funktion generation_psw generieren.
+# die Route /users/update_pwd/<int:id> zum Ändern des Passworts und dieses neue Passwort muss mindestens einen Kleinbuchstaben, einen Großbuchstaben, eine Zahl von 0 bis 9 und ein Symbol enthalten
 # Ich habe eine Funktion load_users() erstellt, die die Daten aus einer JSON-Datei lädt.
 # users.json ist die JSON-Datei, in der wir die Benutzer speichern.
 # Jede Änderung wird in der Datei users.json gespeichert.
