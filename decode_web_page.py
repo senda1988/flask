@@ -28,7 +28,7 @@ def save_articles(articles):
 
 @app.route("/")
 def home():
-    return "Welcome to the NYT Scraper API!"
+    return "Welcome !"
 
 
 @app.route("/titel_articles", methods=["POST"])
