@@ -1,6 +1,6 @@
 # Dieser Code extrahiert alle Artikeltitel von der Seite „New York Times“ und speichert sie
 # in der Datei „title_articles.json“ (POST /fetch_titles).
-
+# Beautiful Soup ist eine Python-Bibliothek zum Extrahieren von Daten aus HTML- und XML-Dateien.
 import requests
 from bs4 import BeautifulSoup
 from flask import Flask, jsonify
